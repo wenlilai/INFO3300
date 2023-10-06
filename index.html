@@ -1,196 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Project 1</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-  </head>
 
-  <body>
-    <h1>INFO 3300 Group Project 1</h1>
-    <p>Group Project Members:</p>
-    <ol>
-      <li>Dennis Quizhpi, dq39</li>
-      <li>Wen Li Lai, wl438</li>
-      <li>Jenny Chen, jc2676</li>
-      <li>Aarya Tavshikar, amt272</li>
-    </ol>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Project 1</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
 
-    <p id = 'cleaning'>
-      <script>
-        //Setting up the data files
+<body>
+  <h1>INFO 3300 Group Project 1</h1>
+  <p>Group Project Members:</p>
+  <ol>
+    <li>Dennis Quizhpi, dq39</li>
+    <li>Wen Li Lai, wl438</li>
+    <li>Jenny Chen, jc2676</li>
+    <li>Aarya Tavshikar, amt272</li>
+  </ol>
 
-        //reference list for countries
-        const countries = [
-          "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
-          "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus",
-          "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil",
-          "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
-          "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)",
-          "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia (Czech Republic)", "Democratic Republic of the Congo (Congo-Kinshasa)",
-          "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador",
-          "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini (formerly Swaziland)", "Ethiopia", "Fiji", "Finland", "France",
-          "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
-          "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
-          "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait",
-          "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
-          "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
-          "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (formerly Burma)",
-          "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
-          "North Macedonia (formerly Macedonia)", "Norway", "Oman", "Pakistan", "Palau", "Palestine State", "Panama",
-          "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia",
-          "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
-          "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia",
-          "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
-          "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga",
-          "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
-          "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen",
-          "Zambia", "Zimbabwe"
-         ];
-      
+  <p id='cleaning'>
+    <script>
+      //Setting up the data files
 
-      </script>
-
-    </p>
-    
-
-    <p id = 'graph1'>
-
-        <svg id = 'student-teacher' width = 500 height = 500></svg>
-
-        <script>
-
-          //setting up the svg
-          const svg = d3.select('svg#student-teacher');
-          const width = svg.attr('width');
-          const height = svg.attr('height');
-          const margin = {top: 10, right: 60, bottom: 70, left: 100};
-          const chartWidth = width - margin.left - margin.right;
-          const chartHeight = height - margin.top - margin.bottom;
-
-          //creating annotations and chartArea groups
-          let annotations = svg.append('g').attr('id', 'annotations');
-          let chartArea = svg.append('g').attr('id', 'points')
-                              .attr('transform', 'translate('+margin.left+', '+margin.top+')');
+      //reference list for countries
+      const countries = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
+        "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus",
+        "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil",
+        "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+        "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)",
+        "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia (Czech Republic)", "Democratic Republic of the Congo (Congo-Kinshasa)",
+        "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador",
+        "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini (formerly Swaziland)", "Ethiopia", "Fiji", "Finland", "France",
+        "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
+        "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
+        "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait",
+        "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+        "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
+        "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (formerly Burma)",
+        "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
+        "North Macedonia (formerly Macedonia)", "Norway", "Oman", "Pakistan", "Palau", "Palestine State", "Panama",
+        "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia",
+        "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+        "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia",
+        "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
+        "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+        "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen",
+        "Zambia", "Zimbabwe"
+      ];
 
 
-          //setting up the data with promise
-          d3.csv('data/student_teacher_ratio.csv', d3.autoType).then((data) =>{
+    </script>
 
-          //some rows don't actually have countries -- they have stuff like
-          //high-income areas or developing countries, or categories like Sub-saharan Africa. We wanted to get rid of them by
-          //checking if each country in this list was actually a country in our reference list.
-
-          //filter
-          data = data.filter(function(d){
-            return countries.includes(d.country) && d.ratio != 'NA' && d.year != 'NA';
-          })
+  </p>
 
 
+  <p id='graph1'>
 
-          //setting up scales
-          const yearExtent = [2012, 2013, 2014, 2015, 2016, 2017];
-          const yearScale = d3.scaleLinear().domain([d3.min(yearExtent), d3.max(yearExtent)]).range([0, chartWidth]);
+    <svg id='student-teacher' width=500 height=500></svg>
 
-          //number of ticks to the number of years
-          const numberOfTicks = yearExtent.length; 
-          const yearsArray = d3.ticks(d3.min(yearExtent), d3.max(yearExtent), numberOfTicks);
+    <script>
 
+      //setting up the svg
+      const svg = d3.select('svg#student-teacher');
+      const width = svg.attr('width');
+      const height = svg.attr('height');
+      const margin = { top: 10, right: 60, bottom: 70, left: 100 };
+      const chartWidth = width - margin.left - margin.right;
+      const chartHeight = height - margin.top - margin.bottom;
 
-          const ratioExtent = d3.extent(data, d => d['student_ratio']);
-          const ratioScale = d3.scaleLinear().domain(ratioExtent).range([chartHeight, 0]);
-
-          //extents check
-          console.log(yearExtent);
-          console.log(ratioExtent);
-
-          console.log(margin);
-          //X-axis
-          let bottomAxis = d3.axisBottom(yearScale)
-                              .tickValues(yearsArray)
-                              .tickFormat(d3.format("d"));
-
-          let bottomGridLines = d3.axisBottom(yearScale)
-                                  .tickSize(-chartHeight-10)
-                                  .tickFormat("");
-          
-
-          annotations.append('g')
-                      .attr('class', 'x-axis')
-                      .attr('transform', 'translate('+margin.left+', '+(chartHeight+margin.top+10)+')')
-                      .call(bottomAxis);
-
-          annotations.append('g')
-                      .attr('class', 'x-gridlines')
-                      .attr('transform', 'translate('+margin.left+', '+(chartHeight+margin.top+10)+')')
-                      .call(bottomGridLines);
-          
-          annotations.append('text')
-                      .attr("x", chartWidth/2)
-                      .attr('y', height)
-                      .text('Years')
-                      .style('font-weight', 'bold')
+      //creating annotations and chartArea groups
+      let annotations = svg.append('g').attr('id', 'annotations');
+      let chartArea = svg.append('g').attr('id', 'points')
+        .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
 
-          //y-axis
-          let leftAxis = d3.axisLeft(ratioScale)
-                        .tickFormat(d3.format(""));
-          let leftGridlines = d3.axisLeft(ratioScale)
-                        .tickSize(-chartWidth-10)
-                        .tickFormat('');
+      //setting up the data with promise
+      d3.csv('data/graph1-3300.csv', d3.autoType).then((data) => {
 
-          annotations.append('g')
-                    .attr('class', 'y-axis')
-                    .attr('transform', 'translate('+(margin.left-10)+', '+margin.top+')')
-                    .call(leftAxis);
-                    
-          annotations.append('g')
-                    .attr('class', 'y-gridlines')
-                    .attr('transform', 'translate('+(margin.left-10)+', '+margin.top+')')
-                    .call(leftGridlines);
+        //some rows don't actually have countries -- they have stuff like
+        //high-income areas or developing countries, or categories like Sub-saharan Africa. We wanted to get rid of them by
+        //checking if each country in this list was actually a country in our reference list.
 
-          annotations.append('text')
-                    .attr("x", 0)
-                    .attr('y', chartHeight/2)
-                    .attr('dy', '-10em') 
-                    .style('font-weight', 'bold')
-                    .attr('transform', 'rotate(-90)')
-                    .style('text-anchor', 'middle')
-                    .text('Student-Teacher Ratio')
-
-              console.log(annotations);
-
-            })
-          
-
-
-
-        </script>
-    </p>
-
-    <p id = 'graph2'>
-      <div>
-        <p id = 'edu-outcomes' width = 500 height = 500></p>
-      </div>
-
-      <script>
-       
-        //setting the svg
-        
-      
-
-        //education_index
-        //this is from wikipedia, and from what I'm seeing it's pretty clean.
-        d3.csv('data/education_index_1.csv', d3.autoType).then((data) => {
-            
-        //filtering data
-
+        //filter
+        data = data.filter(function (d) {
+          return countries.includes(d.country) && d.ratio != 'NA' && d.year != 'NA';
         })
 
-      </script>
 
-    </p>
 
-  </body>
+        //setting up scales
+        const yearExtent = [2012, 2013, 2014, 2015, 2016, 2017];
+        const yearScale = d3.scaleLinear().domain([d3.min(yearExtent), d3.max(yearExtent)]).range([0, chartWidth]);
+
+        //number of ticks to the number of years
+        const numberOfTicks = yearExtent.length;
+        const yearsArray = d3.ticks(d3.min(yearExtent), d3.max(yearExtent), numberOfTicks);
+
+
+        const ratioExtent = d3.extent(data, d => d['student_ratio']);
+        const ratioScale = d3.scaleLinear().domain(ratioExtent).range([chartHeight, 0]);
+
+        //extents check
+        console.log(yearExtent);
+        console.log(ratioExtent);
+
+        console.log(margin);
+        //X-axis
+        let bottomAxis = d3.axisBottom(yearScale)
+          .tickValues(yearsArray)
+          .tickFormat(d3.format("d"));
+
+        let bottomGridLines = d3.axisBottom(yearScale)
+          .tickSize(-chartHeight - 10)
+          .tickFormat("");
+
+
+        annotations.append('g')
+          .attr('class', 'x-axis')
+          .attr('transform', 'translate(' + margin.left + ', ' + (chartHeight + margin.top + 10) + ')')
+          .call(bottomAxis);
+
+        annotations.append('g')
+          .attr('class', 'x-gridlines')
+          .attr('transform', 'translate(' + margin.left + ', ' + (chartHeight + margin.top + 10) + ')')
+          .call(bottomGridLines);
+
+        annotations.append('text')
+          .attr("x", chartWidth / 2)
+          .attr('y', height)
+          .text('Years')
+          .style('font-weight', 'bold')
+
+
+        //y-axis
+        let leftAxis = d3.axisLeft(ratioScale)
+          .tickFormat(d3.format(""));
+        let leftGridlines = d3.axisLeft(ratioScale)
+          .tickSize(-chartWidth - 10)
+          .tickFormat('');
+
+        annotations.append('g')
+          .attr('class', 'y-axis')
+          .attr('transform', 'translate(' + (margin.left - 10) + ', ' + margin.top + ')')
+          .call(leftAxis);
+
+        annotations.append('g')
+          .attr('class', 'y-gridlines')
+          .attr('transform', 'translate(' + (margin.left - 10) + ', ' + margin.top + ')')
+          .call(leftGridlines);
+
+        annotations.append('text')
+          .attr("x", 0)
+          .attr('y', chartHeight / 2)
+          .attr('dy', '-10em')
+          .style('font-weight', 'bold')
+          .attr('transform', 'rotate(-90)')
+          .style('text-anchor', 'middle')
+          .text('Student-Teacher Ratio')
+
+        console.log(annotations);
+
+      })
+
+
+
+
+    </script>
+  </p>
+
+  <p id='graph2'>
+  <div>
+    <svg id='edu-outcomes' width=500 height=500></svg>
+  </div>
+
+  <script>
+
+    //setting the svg
+    const svg2 = d3.select('svg#edu-outcomes');
+    const width2 = svg2.attr('width');
+    const height2 = svg2.attr('height');
+    const margin2 = { top: 10, right: 60, bottom: 70, left: 100 };
+    const chartWidth2 = width2 - margin2.left - margin2.right;
+    const chartHeight2 = height2 - margin2.top - margin2.bottom;
+
+    //creating annotations and chartArea groups
+    let annotations2 = svg2.append('g').attr('id', 'annotations');
+    let chartArea2 = svg2.append('g').attr('id', 'points')
+      .attr('transform', 'translate(' + margin2.left + ', ' + margin2.top + ')');
+
+
+    //education_index
+    //this is from wikipedia, and from what I'm seeing it's pretty clean.
+    d3.csv('data/graph2-3300.csv', d3.autoType).then((data) => {
+
+      //filtering data
+
+      //setting up scales
+      const gniExtent = d3.extent(data, d => d['gni']);
+      const gniScale = d3.scaleLinear().domain(gniExtent).range([chartHeight, 0]);
+
+      const ratioExtent = d3.extent(data, d => d['student_ratio']);
+      const ratioScale = d3.scaleLinear().domain(ratioExtent).range([chartHeight, 0]);
+
+      console.log(gniExtent);
+      console.log(ratioExtent);
+
+      console.log(margin2);
+      //X-axis
+      let bottomAxis = d3.axisBottom(gniScale)
+        .tickFormat(d3.format("d"));
+
+      let bottomGridLines = d3.axisBottom(gniScale)
+        .tickSize(-chartHeight - 10)
+        .tickFormat("");
+
+
+      annotations2.append('g')
+        .attr('class', 'x-axis')
+        .attr('transform', 'translate(' + margin2.left + ', ' + (chartHeight2 + margin2.top + 10) + ')')
+        .call(bottomAxis);
+
+      annotations2.append('g')
+        .attr('class', 'x-gridlines')
+        .attr('transform', 'translate(' + margin2.left + ', ' + (chartHeight2 + margin2.top + 10) + ')')
+        .call(bottomGridLines);
+
+      annotations2.append('text')
+        .attr("x", chartWidth2 / 2)
+        .attr('y', height2)
+        .text('GNI')
+        .style('font-weight', 'bold')
+
+
+      //y-axis
+      let leftAxis = d3.axisLeft(ratioScale)
+        .tickFormat(d3.format(""));
+      let leftGridlines = d3.axisLeft(ratioScale)
+        .tickSize(-chartWidth2 - 10)
+        .tickFormat('');
+
+      annotations2.append('g')
+        .attr('class', 'y-axis')
+        .attr('transform', 'translate(' + (margin2.left - 10) + ', ' + margin2.top + ')')
+        .call(leftAxis);
+
+      annotations2.append('g')
+        .attr('class', 'y-gridlines')
+        .attr('transform', 'translate(' + (margin2.left - 10) + ', ' + margin2.top + ')')
+        .call(leftGridlines);
+
+      annotations2.append('text')
+        .attr("x", 0)
+        .attr('y', chartHeight2 / 2)
+        .attr('dy', '-10em')
+        .style('font-weight', 'bold')
+        .attr('transform', 'rotate(-90)')
+        .style('text-anchor', 'middle')
+        .text('Student-Teacher Ratio')
+
+      console.log(annotations2);
+    })
+
+  </script>
+
+  </p>
+
+</body>
+
 </html>
