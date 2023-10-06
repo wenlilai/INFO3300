@@ -65,7 +65,7 @@
           const svg = d3.select('svg#student-teacher');
           const width = svg.attr('width');
           const height = svg.attr('height');
-          const margin = {top: 10, right: 70, bottom: 70, left: 100};
+          const margin = {top: 10, right: 60, bottom: 70, left: 100};
           const chartWidth = width - margin.left - margin.right;
           const chartHeight = height - margin.top - margin.bottom;
 
@@ -93,7 +93,8 @@
           const yearExtent = [2012, 2013, 2014, 2015, 2016, 2017];
           const yearScale = d3.scaleLinear().domain([d3.min(yearExtent), d3.max(yearExtent)]).range([0, chartWidth]);
 
-          const numberOfTicks = yearExtent.length; // Set number of ticks to the number of years
+          //number of ticks to the number of years
+          const numberOfTicks = yearExtent.length; 
           const yearsArray = d3.ticks(d3.min(yearExtent), d3.max(yearExtent), numberOfTicks);
 
 
@@ -170,18 +171,20 @@
 
     <p id = 'graph2'>
       <div>
-        <svg id = 'edu-outcomes' width = 500 height = 500></svg>
+        <p id = 'edu-outcomes' width = 500 height = 500></p>
       </div>
 
       <script>
+       
+        //setting the svg
+        
+      
 
         //education_index
         //this is from wikipedia, and from what I'm seeing it's pretty clean.
         d3.csv('data/education_index_1.csv', d3.autoType).then((data) => {
             
         //filtering data
-  
-
 
         })
 
