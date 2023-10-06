@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 indicator,country,year,student_ratio,gni
 Post-Secondary Non-Tertiary Education,Lesotho,2014,155,1260
 Pre-Primary Education,Tanzania,2017,113.9653,1200
@@ -3624,3 +3625,212 @@ Post-Secondary Non-Tertiary Education,Niger,2013,1.55466,2140
 Post-Secondary Non-Tertiary Education,Poland,2012,1.43059,18350
 Post-Secondary Non-Tertiary Education,Kyrgyzstan,2013,1.3587,1410
 Tertiary Education,Grenada,2017,1.16169,9340
+=======
+Country,GNI,Year
+Bermuda (UK),"125,240",2022
+Liechtenstein,"116,600",2009
+Norway,"95,510",2022
+Luxembourg,"91,200",2022
+Singapore,"91,100",2022
+Switzerland,"89,145",2022
+Ireland,"81,070",2022
+Isle of Man (UK),"79,300",2020
+United States,"76,370",2022
+Denmark,"73,200",2022
+Qatar,"70,500",2022
+Faroe Islands (Denmark),"69,560",2021
+Iceland,"68,220",2022
+Cayman Islands (UK),"65,190",2021
+Sweden,"62,990",2022
+Australia,"60,430",2022
+Netherlands,"57,430",2022
+Austria,"56,140",2022
+Israel,"54,650",2022
+Hong Kong (China),"54,370",2022
+Finland,"54,360",2022
+Germany,"53,390",2022
+Canada,"52,960",2022
+United Arab Emirates,"48,950",2022
+United Kingdom,"48,890",2022
+Belgium,"48,700",2022
+New Zealand,"48,460",2022
+San Marino,"47,120",2021
+Andorra,"46,530",2019
+France,"45,860",2022
+Macau (China),"44,980",2021
+Japan,"42,440",2022
+Kuwait,"39,570",2022
+Italy,"37,700",2022
+South Korea,"35,990",2022
+Greenland (Denmark),"34,800",2007
+Malta,"33,550",2022
+Spain,"31,680",2022
+Bahamas,"31,530",2022
+Sint Maarten (Netherlands),"31,500",2021
+Brunei,"31,410",2022
+Slovenia,"30,600",2022
+Cyprus,"30,540",2022
+Aruba (Netherlands),"29,460",2021
+Estonia,"27,640",2022
+Saudi Arabia,"27,590",2022
+Bahrain,"27,180",2022
+Czech Republic,"26,590",2022
+Portugal,"25,800",2022
+Puerto Rico (US),"24,560",2022
+Turks and Caicos Islands (UK),"24,160",2022
+Lithuania,"23,690",2022
+Slovakia,"22,060",2022
+Greece,"21,740",2022
+Latvia,"21,500",2022
+Oman,"20,150",2022
+Saint Kitts and Nevis,"19,730",2022
+Croatia,"19,470",2022
+Barbados,"19,350",2022
+Hungary,"19,010",2022
+French Polynesia (France),"18,560",2000
+Curaçao (Netherlands),"18,430",2021
+Poland,"18,350",2022
+Antigua and Barbuda,"18,280",2022
+Uruguay,"18,030",2022
+Nauru,"17,870",2022
+Panama,"16,750",2022
+Trinidad and Tobago,"16,330",2022
+Romania,"15,660",2022
+Chile,"15,360",2022
+Guyana,"15,050",2022
+Seychelles,"14,340",2022
+Bulgaria,"13,250",2022
+New Caledonia (France),"13,210",2000
+China,"12,850",2022
+Russia,"12,830",2022
+World,"12,804",2022
+Palau,"12,790",2021
+Costa Rica,"12,670",2022
+Malaysia,"11,780",2022
+Argentina,"11,620",2022
+Saint Lucia,"11,160",2022
+Maldives,"11,030",2022
+Mauritius,"10,760",2022
+Turkey,"10,590",2022
+Mexico,"10,410",2022
+Montenegro,"10,400",2022
+Kazakhstan,"9,470",2022
+Grenada,"9,340",2022
+Serbia,"9,140",2022
+Saint Vincent and the Grenadines,"9,110",2022
+Dominican Republic,"9,050",2022
+Cuba,"8,920",2019
+Dominica,"8,460",2022
+Brazil,"8,140",2022
+Marshall Islands,"7,920",2022
+Bosnia and Herzegovina,"7,660",2022
+Gabon,"7,540",2022
+Botswana,"7,350",2022
+Libya,"7,260",2022
+Belarus,"7,240",2022
+Thailand,"7,230",2022
+Tuvalu,"7,210",2022
+Turkmenistan,"7,080",2019
+Belize,"6,800",2022
+South Africa,"6,780",2022
+Peru,"6,770",2022
+Albania,"6,770",2022
+North Macedonia,"6,640",2022
+Colombia,"6,510",2022
+Ecuador,"6,310",2022
+Armenia,"5,960",2022
+Paraguay,"5,920",2022
+Jamaica,"5,670",2022
+Azerbaijan,"5,630",2022
+Georgia,"5,620",2022
+Kosovo,"5,590",2022
+Guatemala,"5,350",2022
+Moldova,"5,340",2022
+Equatorial Guinea,"5,320",2022
+Iraq,"5,270",2022
+Fiji,"5,270",2022
+Lebanon,"4,970",2021
+Tonga,"4,930",2021
+Suriname,"4,880",2022
+Namibia,"4,880",2022
+El Salvador,"4,720",2022
+Palestine,"4,610",2022
+Indonesia,"4,580",2022
+Ukraine,"4,270",2022
+Jordan,"4,260",2022
+Mongolia,"4,210",2022
+Cabo Verde,"4,140",2022
+Federated States of Micronesia,"4,130",2022
+Egypt,"4,100",2022
+Vietnam,"4,010",2022
+Philippines,"3,950",2022
+Iran,"3,900",2022
+Algeria,"3,900",2022
+Tunisia,"3,840",2022
+Eswatini,"3,800",2022
+Morocco,"3,710",2022
+Samoa,"3,630",2022
+Sri Lanka,"3,610",2022
+Vanuatu,"3,560",2022
+Bolivia,"3,450",2022
+Kiribati,"3,280",2022
+Djibouti,"3,180",2022
+Bhutan,"3,040",2021
+Bangladesh,"2,820",2022
+Honduras,"2,740",2022
+Papua New Guinea,"2,730",2022
+Ivory Coast,"2,620",2022
+Sao Tome and Principe,"2,410",2022
+India,"2,380",2022
+Laos,"2,360",2022
+Ghana,"2,350",2022
+Solomon Islands,"2,220",2022
+Uzbekistan,"2,190",2022
+Kenya,"2,170",2022
+Mauritania,"2,160",2022
+Nigeria,"2,140",2022
+Nicaragua,"2,090",2022
+Republic of the Congo,"2,060",2022
+Timor-Leste,"1,970",2022
+Angola,"1,900",2022
+Cambodia,"1,700",2022
+Cameroon,"1,660",2022
+Senegal,"1,640",2022
+Haiti,"1,610",2022
+Comoros,"1,610",2022
+Pakistan,"1,580",2022
+Zimbabwe,"1,500",2022
+Kyrgyzstan,"1,410",2022
+Benin,"1,400",2022
+Nepal,"1,340",2022
+Lesotho,"1,260",2022
+Tajikistan,"1,210",2022
+Myanmar,"1,210",2022
+Tanzania,"1,200",2022
+Guinea,"1,180",2022
+Zambia,"1,170",2022
+South Sudan,"1,050",2015
+Ethiopia,"1,020",2022
+Togo,990,2022
+Uganda,930,2022
+Rwanda,930,2022
+Mali,850,2022
+Yemen,840,2018
+Burkina Faso,840,2022
+Guinea-Bissau,820,2022
+The Gambia,810,2022
+Syria,760,2020
+Sudan,760,2022
+Chad,690,2022
+Liberia,680,2022
+Malawi,640,2022
+Niger,610,2022
+Democratic Republic of the Congo,590,2022
+Sierra Leone,510,2022
+Madagascar,510,2022
+Mozambique,500,2022
+Central African Republic,480,2022
+Somalia,470,2022
+Afghanistan,390,2021
+Burundi,240,2022
+>>>>>>> 6c3bbacf365a61b26ac873cca97f1246e5f9005c
